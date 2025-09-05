@@ -1,0 +1,60 @@
+:root {
+  /* ===== Base Colors ===== */
+  --tn-bg: #1a1b26;        /* Main background */
+  --tn-bg-alt: #16161e;    /* Panels, sidebars, subtle areas */
+  --tn-bg-highlight: #292e42; /* Active line, hover background */
+
+  /* ===== Foreground / Text ===== */
+  --tn-fg: #c0caf5;        /* Primary text */
+  --tn-fg-dark: #a9b1d6;   /* Secondary text, muted headings */
+  --tn-fg-dim: #565f89;    /* Disabled text, low-contrast labels */
+
+  /* ===== Accent Colors ===== */
+  --tn-blue: #7aa2f7;      /* Links, active states, primary buttons */
+  --tn-cyan: #7dcfff;      /* Info highlights, secondary actions */
+  --tn-teal: #1abc9c;      /* Success alternative, tags, accents */
+  --tn-green: #9ece6a;     /* Success, confirmations, "OK" states */
+  --tn-magenta: #bb9af7;   /* Highlights, keywords, emphasis */
+  --tn-purple: #9d7cd8;    /* Alternative highlight, headings */
+  --tn-red: #f7768e;       /* Errors, destructive actions */
+  --tn-orange: #ff9e64;    /* Warnings, attention-grabbing elements */
+  --tn-yellow: #e0af68;    /* Warnings, highlights, alerts */
+
+  /* ===== UI Elements ===== */
+  --tn-border: #3b4261;    /* Borders, dividers */
+  --tn-comment: #565f89;   /* Subtext, placeholders, comments */
+  --tn-accent: #2ac3de;    /* Accent highlight (e.g. selection, focus) */
+}
+
+* {
+    font-family: 'JetBrains Mono';
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Reset Bootstrap text margins */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ul, ol, li,
+figure, figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+.main-background {
+    background-color: var(--tn-bg);
+}
+
+.main-foreground {
+    color: var(--tn-fg);
+}
+
+.active-background {
+    background-color: var(--tn-bg-highlight);
+}
+
+input {
+    border: none;
+}
