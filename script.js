@@ -42,14 +42,17 @@ function displayticketInfo() {
         infoContainer.appendChild(buildNameDisplay())
         infoContainer.appendChild(buildCarriageDisplay())
         infoContainer.appendChild(buildPriceDisplay())
+    } else {
+        buildNameDisplay();
+        buildCarriageDisplay();
+        buildPriceDisplay();
     }
 }
-
-
 
 function buildNameDisplay() {
     const passengerName = document.getElementById("inputUserInfo").value;
     let passengerContainer = document.getElementById("passenger-container");
+    let nameContainer;
 
     // If the container doesn't exist, create it once
     if (!passengerContainer) {
@@ -59,12 +62,15 @@ function buildNameDisplay() {
 
         const title = document.createElement("h3");
         title.textContent = "Nome Persona";
-        title.classList.add("mb-2")
-        passengerContainer.appendChild(title)
+        title.classList.add("mb-2");
+        passengerContainer.appendChild(title);
 
-        const nameContainer = document.createElement("p")
-        nameContainer.textContent = passengerName;
+        nameContainer = document.createElement("p");
+        nameContainer.id = "name-container";
+        nameContainer.textContent = passengerName.trim();
         passengerContainer.append(nameContainer)
+    } else {
+        document.getElementById('name-container').textContent = passengerName.trim();
     }
 
     return passengerContainer;
@@ -90,8 +96,10 @@ function buildCarriageDisplay() {
     return carriageContainer;
 }
 
-function  buildPriceDisplay() {
+function buildPriceDisplay() {
     let priceContainer = document.getElementById("price-container");
+    let price;
+
 
     if (!priceContainer) {
         priceContainer = document.createElement("div");
@@ -101,9 +109,12 @@ function  buildPriceDisplay() {
         title.textContent = "prezzo";
         priceContainer.appendChild(title);
 
-        const price = document.createElement("p");
+        price = document.createElement("p");
+        price.id = "price"
         price.textContent = calculateticket();
         priceContainer.appendChild(price);
+    } else {
+        document.getElementById("price").textContent = calculateticket();
     }
 
     return priceContainer

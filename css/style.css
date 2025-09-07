@@ -57,4 +57,25 @@ figure, figcaption {
 
 input {
     border: none;
+    background-color: var(--tn-bg-alt);
+    color: var(--tn-fg);
+}
+
+button {
+    background-color: var(--tn-blue) !important;
+    border: var(--tn-blue) !important;
+    color: var(--tn-bg) !important;
+}
+
+/* Hides number arrows but allows to still use keyboard arrows to increase/decrease */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
